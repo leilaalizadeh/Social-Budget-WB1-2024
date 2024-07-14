@@ -8,10 +8,10 @@ function ApprovedTable(props) {
         <Table striped>
             <thead>
                 <tr>
-                    <th>description</th>
-                    <th>cost</th>
-                    <th>score</th>
-                    <th>author</th>
+                    <th>Description</th>
+                    <th>Cost</th>
+                    <th>Score</th>
+                    <th>Author</th>
                 </tr>
             </thead>
             <tbody>

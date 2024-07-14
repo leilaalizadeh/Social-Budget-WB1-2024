@@ -9,9 +9,9 @@ function ProposalsTable(props) {
         <Table striped>
             <thead>
                 <tr>
-                    <th>description</th>
-                    <th>cost</th>
-                    <th>actions</th>
+                    <th>Description</th>
+                    <th>Cost</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>

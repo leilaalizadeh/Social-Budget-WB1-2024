@@ -10,10 +10,10 @@ function BudgetTable(props) {
         <Table striped>
             <thead>
                 <tr>
-                    <th>budget</th>
-                    <th>year</th>
-                    <th>phase</th>
-                    <th>actions</th>
+                    <th>Budget</th>
+                    <th>Year</th>
+                    <th>Phase</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -47,7 +47,6 @@ function BudgetAction(props) {
 
             <Button id="dangerBtn" variant='danger' onClick={() => props.changePhase(props.budget.id, props.budget.phase, "reset")}
                 disabled={props.budget.phase == 1 || props.budget.phase == 2 || props.budget.phase == null}>Reset</Button>
-
         </td>
     );
 }

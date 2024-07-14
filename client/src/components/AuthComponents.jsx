@@ -14,7 +14,7 @@ function LoginForm(props) {
     try {
       await props.login(credentials);
     } catch (err) {
-      setError(err.message); // Set error message
+      setError(JSON.stringify(err.message));
     }
   };
 
@@ -23,7 +23,7 @@ function LoginForm(props) {
       <Col md={6}>
         <Form onSubmit={handleSubmit}>
           <Form.Group controlId='username' className='mb-3'>
-            <Form.Label>username</Form.Label>
+            <Form.Label>Username</Form.Label>
             <Form.Control type='text' value={username} onChange={ev => setUsername(ev.target.value)} required={true} />
           </Form.Group>
 

@@ -1,5 +1,5 @@
 const SERVER_URL = 'http://localhost:3001';
-import { CustomError } from "../../server/SBModels.mjs";
+import CustomError from "../SBModels.mjs";
 
 /**
  * user log in
