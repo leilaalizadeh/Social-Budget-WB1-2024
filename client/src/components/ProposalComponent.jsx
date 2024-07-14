@@ -33,7 +33,7 @@ function ProposalsRowData(props) {
     return (
         <>
             <td>{props.proposals.description}</td>
-            <td>{props.proposals.cost} Euro</td>
+            <td>{props.proposals.cost} <span>&#8364;</span></td>
         </>
     );
 }
@@ -112,7 +112,7 @@ function ProposalsLayout(props) {
                     }
 
                     <Row>
-                        <Col as='h3'>Proposals: year {budget.year}, <a className='danger'> {budget.budget} Euro</a></Col>
+                        <Col as='h3'>Proposals: year {budget.year}, <a className='danger'> {budget.budget} <span>&#8364;</span></a></Col>
                     </Row>
                     <Row>
                         <Col lg={10} className="mx-auto">

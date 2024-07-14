@@ -33,7 +33,7 @@ function BudgetRow(props) {
 function BudgetRowData(props) {
     return (
         <>
-            <td>{props.budgets.budget} Euro</td>
+            <td>{props.budgets.budget} <span>&#8364;</span></td>
             <td>{props.budgets.year}</td>
             <td>{props.budgets.phase}</td>
         </>

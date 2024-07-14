@@ -98,3 +98,7 @@ input {
   font-weight: 600;
   margin-bottom: 80px;
 }
+table, th, td {
+  border: 2px solid rgb(13 110 253);
+  margin-top: 20px !important;
+}
