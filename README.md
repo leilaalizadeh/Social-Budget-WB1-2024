@@ -17,7 +17,7 @@
 ## Main React Components
 
 - `ApprovedTable` (in `ApprovedProposals.jsx`): This component is used to display the list of approved and unapproved proposals.
-- `LognForm` (in `AuthComponent.jsx`): This component displays the login form for entering the username and password.
+- `LoginForm` (in `AuthComponent.jsx`): This component displays the login form for entering the username and password.
 - `BudgetTable` (in `BudgetComponents.jsx`): This component displays the budget information in a table format.
 - `AddBudgetLayout` (in `BudgetComponents.jsx`): This component is used to add new budget.
 - `ApprovedTable` (in `IndexPageComponent.jsx`): This component is used to display the list of approved proposals for anonymous users.

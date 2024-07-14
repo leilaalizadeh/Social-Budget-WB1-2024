@@ -35,7 +35,7 @@ function PreferenceRowData(props) {
     return (
         <>
             <td>{props.preference.description}</td>
-            <td>{props.preference.cost} €</td>
+            <td>{props.preference.cost} <span>&#8364;</span></td>
             <td>{props.preference.score}</td>
         </>
     );

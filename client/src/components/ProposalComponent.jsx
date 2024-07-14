@@ -60,8 +60,14 @@ function ProposalsLayout(props) {
 
         const getBudgetData = async () => {
             const result = await API.getBudget();
-            setBudget(result[0]);
-            setPhase(result[0].phase);
+            if (result.length != 0) {
+                setBudget(result[0]);
+                setPhase(result[0].phase);
+            }
+            else {
+                setBudget([]);
+                setPhase(null);
+            }
         }
         const getUserProposals = async () => {
             const result = await API.getUserProposals(props.user.id);

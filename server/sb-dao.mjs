@@ -320,8 +320,7 @@ export const getOtherProposals = (userId) => {
  */
 export const addPreference = (preference_id, proposal_id, user_id, score) => {
     return new Promise((resolve, reject) => {
-        if (score > 3 || score < 0)
-            reject(new CustomError(402, "The score should be between 1 and 3 "));
+     
         let sql = 'SELECT phase from budget';
         db.get(sql, [], (err, row) => {
             if (err)
@@ -329,6 +328,10 @@ export const addPreference = (preference_id, proposal_id, user_id, score) => {
             else if (row == undefined)
                 reject(new CustomError(402, "The budget is reseted..."));
             else if (row.phase == 2) {
+
+                if (score > 3 || score < 0)
+                    reject(new CustomError(402, "The score should be between 1 and 3 "));
+                
                 if (score == 0) {
                     const sql = `DELETE from preference where id=?`;
                     db.run(sql, [preference_id], function (err) {
