@@ -117,35 +117,46 @@
 
 ## Database Tables
 
-- Table `user` - The user table stores the data of the users who wants to use the system and contains the following columns:
-	"id"	INTEGER NOT NULL UNIQUE
-	"username"	TEXT NOT NULL
-	"password"	TEXT NOT NULL
-	"salt"	TEXT NOT NULL
-	"isAdmin"	INTEGER NOT NULL CHECK("isAdmin" IN (0, 1))  if the user is admin "isAdmin" is 1 else 0
-	PRIMARY KEY("id" AUTOINCREMENT)
-- Table `budget` - This table stores the record of the budget defined by admin and contains the following columns:
-	"id"	INTEGER NOT NULL UNIQUE
-	"budget"	INTEGER NOT NULL
-	"phase"	INTEGER NOT NULL CHECK("phase" IN (0, 1, 2, 3))
-	"year"	INTEGER NOT NULL
-	PRIMARY KEY("id" AUTOINCREMENT)
-- Table `proposal` - This table stores proposals defined by each user and contains the following columns:
-	"id"	INTEGER NOT NULL UNIQUE,
-	"user_id"	INTEGER NOT NULL,
-	"description"	TEXT NOT NULL,
-	"cost"	INTEGER NOT NULL,
-	PRIMARY KEY("id" AUTOINCREMENT),
-	FOREIGN KEY("user_id") REFERENCES "user"("id")
-- Table `preference` - This table stores the scores that each user gives to each proposal and contains the following columns:
-	"id"	INTEGER NOT NULL UNIQUE,
-	"proposal_id"	INTEGER NOT NULL,
-	"user_id"	INTEGER NOT NULL,
-	"score"	INTEGER NOT NULL CHECK("score" IN (0, 1, 2, 3)),
-	PRIMARY KEY("id" AUTOINCREMENT),
-	FOREIGN KEY("proposal_id") REFERENCES "proposal"("id"),
-	FOREIGN KEY("user_id") REFERENCES "user"("id")
+- Table `user` 
+  Description: The user table stores the data of the users who wants to use the system and contains the following columns:
 
+   | Columns   | DataType | Constraints                    | Description                                      |
+   |-----------|----------|--------------------------------|--------------------------------------------------|
+   | id        | INTEGER  | PRIMARY KEY, AUTOINCREMENT     | Unique identifier for each user                  |
+   | username  | TEXT     | NOT NULL                       | The unique username of the user                  |
+   | password  | TEXT     | NOT NULL                       | The user's password (hashed)                     |
+   | salt      | TEXT     | NOT NULL                       | A unique salt for password hashing               |
+   | isAdmin   | INTEGER  | NOT NULL                       | If the user has admin role, "isAdmin" is 1 else 0|
+
+- Table `budget`
+  Description: This table stores the record of the budget defined by admin and contains the following columns:
+
+   | Columns   | DataType | Constraints                    | Description                                      |
+   |-----------|----------|--------------------------------|--------------------------------------------------|
+   | id        | INTEGER  | PRIMARY KEY, AUTOINCREMENT     | Unique identifier for each budget                |
+   | budget    | INTEGER  | NOT NULL                       |                                                  |
+   | phase     | INTEGER  | NOT NULL                       | CHECK("phase" IN (0,1,2,3))                      |
+   | year      | INTEGER  | NOT NULL                       |                                                  |
+
+- Table `proposal` - 
+  Description: This table stores proposals defined by each user and contains the following columns:
+    
+   | Columns    | DataType | Constraints                    | Description                                      |
+   |------------|----------|--------------------------------|--------------------------------------------------|
+   | id         | INTEGER  | PRIMARY KEY, AUTOINCREMENT     | Unique identifier for each proposal              |
+   | user_id    | INTEGER  | NOT NULL                       | FOREIGN KEY("user_id") REFERENCES "user"("id")   |
+   | description| TEXT     | NOT NULL                       |                                                  |
+   | cost       | INTEGER  | NOT NULL                       |                                                  |
+
+- Table `preference` 
+  Description: This table stores the scores that each user gives to each proposal and contains the following columns:
+   
+   | Columns    | DataType | Constraints                    | Description                                            |
+   |------------|----------|--------------------------------|--------------------------------------------------------|
+   | id         | INTEGER  | PRIMARY KEY, AUTOINCREMENT     | Unique identifier for each preference                  |
+   | proposal_id| INTEGER  | NOT NULL                       | FOREIGN KEY("proposal_id") REFERENCES "proposal"("id") |
+   | user_id    | TEXT     | NOT NULL                       | FOREIGN KEY("user_id") REFERENCES "user"("id")         |
+   | score      | INTEGER  | NOT NULL                       | CHECK("score" IN (0, 1, 2, 3))                         |
 
 ## Screenshots
 
