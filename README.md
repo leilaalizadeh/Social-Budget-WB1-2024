@@ -1,6 +1,6 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/CNwikhrY)
-# Exam #2: "Social Budget"
-## Student: s329141 ALIZADEH LEILA 
+
+# Exam of the Web Application1 in POLITO: "Social Budget"
+## Student: ALIZADEH LEILA 
 
 ## React Client Application Routes
 
